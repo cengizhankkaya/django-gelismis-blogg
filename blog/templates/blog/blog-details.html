@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog Details
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h1 class="card-title h3 mb-3">
+                                    {{ blog.title | title }}
+                                </h1>
+                                <img src="{{ blog.image.url }}" alt="" class="img-fluid animated-image" style="float: left; margin-right: 20px; margin-bottom: 20px; max-width: 200px; max-height: 200px;">
+                                <p class="card-text">{{ blog.description | safe }}</p>
+                                {% if blog.pdf_file %}
+                                     <a href="{{ blog.pdf_file.url }}" class="btn btn-primary fade-out" style="position: fixed; top: 60px; right: 20px;">PDF Dosyasını İndir</a>
+                                {% endif %}
+                                <a href="{% url 'home' %}">
+                                    <button type="button" class="btn btn-success" style="position: fixed; top: 850px; right: 20px;">Anasayfa</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

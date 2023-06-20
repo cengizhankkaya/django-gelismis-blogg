@@ -1,0 +1,46 @@
+{% load static %}
+<div class="list-group">
+    {% for category in categories  %}
+        {% if category.slug == selected_category %}
+            <a class="list-group-item list-group-item-action active" href="{% url 'blogs_by_category' category.slug %}">{{ category.name |title}}</a> 
+        {% else %}
+            <a class="list-group-item list-group-item-action" href="{% url 'blogs_by_category' category.slug %}">{{ category.name |title}}</a> 
+        {% endif %}
+    {% endfor %}
+    <hr/>
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/1.fotoo.JPG' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Cengizhan Kaya</h5>
+            <p class="card-text">Python Web Geliştirici &amp; Öğrenci</p>
+            <ul class="social-links" style="display: flex; list-style: none; padding: 0;">
+                <li style="margin-right: 10px;">
+                    <a href="https://www.instagram.com/cengizhankkaya/?hl=tr" target="_blank">
+                        <img class="social" src="/static/img/instagram.png" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" alt="Instagram" />
+                    </a>
+                </li>
+                <li style="margin-right: 10px;">
+                    <a href="https://www.linkedin.com/in/cengizhan-kaya-aaab0a187/" target="_blank">
+                        <img class="social" src="/static/img/linkedin.png" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" alt="LinkedIn" />
+                    </a>
+                </li>
+                <li style="margin-right: 10px;">
+                    <a href="https://twitter.com/cengizkya" target="_blank">
+                        <img class="social" src="/static/img/twitter.png" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" alt="Twitter" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UC8reqzg1aACFCxd3yEthszQ" target="_blank">
+                        <img class="social" src="/static/img/youtube.png" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" alt="YouTube" />
+                    </a>
+                </li>
+            </ul>
+            <div class="card-body">
+                <a href="https://open.spotify.com/playlist/7a2em629fmB0gEkVIAnxVS?si=da7ab22deffe40b2" class="card-link">Spotify</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+     
+
